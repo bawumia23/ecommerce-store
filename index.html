@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="ShopEase - A modern e-commerce product catalog and shopping cart."
+  >
+  <title>ShopEase | Modern Online Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="#" class="logo">Shop<span>Ease</span></a>
+
+      <button
+        type="button"
+        id="cart-button"
+        class="cart-button"
+        aria-label="Open shopping cart"
+      >
+        Cart
+        <span id="cart-count" class="cart-count">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">DISCOVER SOMETHING NEW</p>
+        <h1>Shop Smarter. Live Better.</h1>
+        <p class="hero-text">
+          Explore a curated collection of products and enjoy a simple,
+          modern shopping experience.
+        </p>
+        <a href="#products" class="hero-button">Shop Products</a>
+      </div>
+    </section>
+
+    <!-- Product Controls -->
+    <section class="catalog-section" id="products">
+      <div class="container">
+        <div class="catalog-header">
+          <div>
+            <p class="eyebrow">OUR COLLECTION</p>
+            <h2>Featured Products</h2>
+          </div>
+
+          <label class="search-box">
+            <span class="sr-only">Search products</span>
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Search products..."
+              autocomplete="off"
+            >
+          </label>
+        </div>
+
+        <div
+          id="category-filters"
+          class="category-filters"
+          aria-label="Product categories"
+        >
+          <button type="button" class="filter-button active" data-category="all">
+            All Products
+          </button>
+          <button type="button" class="filter-button" data-category="electronics">
+            Electronics
+          </button>
+          <button type="button" class="filter-button" data-category="jewelery">
+            Jewelry
+          </button>
+          <button type="button" class="filter-button" data-category="men's clothing">
+            Men's Clothing
+          </button>
+          <button type="button" class="filter-button" data-category="women's clothing">
+            Women's Clothing
+          </button>
+        </div>
+
+        <div id="loading-message" class="status-message">
+          Loading products...
+        </div>
+
+        <div id="error-message" class="status-message error-message" hidden>
+          Unable to load products. Please try again later.
+        </div>
+
+        <div id="product-grid" class="product-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart Overlay -->
+  <div id="cart-overlay" class="cart-overlay" hidden></div>
+
+  <!-- Shopping Cart Drawer -->
+  <aside
+    id="cart-drawer"
+    class="cart-drawer"
+    aria-label="Shopping cart"
+    aria-hidden="true"
+  >
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button
+        type="button"
+        id="close-cart"
+        class="icon-button"
+        aria-label="Close shopping cart"
+      >
+        &times;
+      </button>
+    </div>
+
+    <div id="cart-items" class="cart-items">
+      <p class="empty-cart-message">Your cart is empty.</p>
+    </div>
+
+    <div class="cart-summary">
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <strong id="cart-subtotal">$0.00</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Tax (10%)</span>
+        <strong id="cart-tax">$0.00</strong>
+      </div>
+
+      <div class="summary-row">
+        <span>Shipping</span>
+        <strong id="cart-shipping">$0.00</strong>
+      </div>
+
+      <div class="summary-row total-row">
+        <span>Total</span>
+        <strong id="cart-total">$0.00</strong>
+      </div>
+
+      <button
+        type="button"
+        id="checkout-button"
+        class="checkout-button"
+        disabled
+      >
+        Proceed to Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div
+    id="checkout-modal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    hidden
+  >
+    <div class="modal-content">
+      <button
+        type="button"
+        id="close-modal"
+        class="icon-button modal-close"
+        aria-label="Close confirmation"
+      >
+        &times;
+      </button>
+
+      <div class="success-icon">&#10003;</div>
+      <h2 id="modal-title">Order Confirmed!</h2>
+      <p>
+        Thank you for shopping with ShopEase. Your order has been successfully
+        placed.
+      </p>
+      <button type="button" id="continue-shopping" class="hero-button">
+        Continue Shopping
+      </button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 ShopEase. Built as an interactive e-commerce project.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
