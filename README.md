@@ -6,7 +6,7 @@ The application retrieves product information dynamically from FakeStoreAPI and 
 
 ## Live Demo
 
-Coming soon.
+https://bawumia23.github.io/ecommerce-store/.
 
 ## Project Overview
 
